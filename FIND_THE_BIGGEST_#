@@ -1,0 +1,27 @@
+from pyfiglet import Figlet
+
+def print_with_design(text):
+    design = Figlet(font='standard')
+    print("\033[95m" + "=" * 40)
+    print("\033[95m" + design.renderText(text))
+    print("\033[95m" + "=" * 40)
+
+def find_biggest_number(num1, num2, num3):
+    if num1 >= num2 and num1 >= num3:
+        return num1
+    elif num2 >= num1 and num2 >= num3:
+        return num2
+    else:
+        return num3
+
+
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+
+
+biggest_number = find_biggest_number(num1, num2, num3)
+
+
+print_with_design("The biggest number is:")
+print(f"\033[96m{biggest_number}")
